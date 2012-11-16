@@ -1,0 +1,8 @@
+This is all of what I  use for vim
+
+This repository contains 2 submodules so run
+git submodule init
+git submodule update
+
+to get everything
+
