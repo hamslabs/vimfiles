@@ -10,7 +10,7 @@ set number
 "Nerdtree setup
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_autoclose=1
-let NERTreeIgnore=['\.o$', '\~$']
+let g:NERDTreeIgnore=['\.o$', '\~$']
 
 "For using ctags
 :nmap ,t :!(cd %:p:h;ctags *)&
