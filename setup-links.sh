@@ -3,13 +3,14 @@ vimdir=~/.vim
 if [ -e $vimdir ] && [ ! -L $vimdir ]
 then
 	mv $vimdir "$vimdir"_orig
-	ln -s `pwd`/.vim $vimdir
 fi
+ln -s `pwd`/.vim $vimdir
 
 
 vimrc=~/.vimrc
 if [ -e $vimrc ] && [ ! -L $vimrc ]
 then
 	mv $vimrc "$vimrc"_orig
-	ln -s `pwd`/.vimrc $vimrc
 fi
+ln -s `pwd`/.vimrc $vimrc
+
