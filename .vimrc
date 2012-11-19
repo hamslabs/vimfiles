@@ -45,8 +45,8 @@ endfunction
 
 nnoremap <leader>g :call SearchWordUnderCurson()<cr>
 function! SearchWordUnderCurson()
-		let g:wordUnderCursor = expand("<cword>")
-		call Ack(g:wordUnderCursor)
+		let g:ackArgs = "-w " . expand("<cword>")
+		call Ack(g:ackArgs)
 		let g:quickfix_is_open = 1
 endfunction
 
