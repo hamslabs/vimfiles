@@ -6,6 +6,10 @@ set tabstop=4
 set shiftwidth=4
 set number
 
+"turn off the noise
+set noerrorbells
+set vb t_vb=
+
 syntax on
 filetype plugin indent on
 
