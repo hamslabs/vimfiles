@@ -1,11 +1,13 @@
 
 call pathogen#infect()
-syntax on
-filetype plugin indent on
 
 set ic
-set ts=4
+set tabstop=4
+set shiftwidth=4
 set number
+
+syntax on
+filetype plugin indent on
 
 "Nerdtree setup
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -24,7 +26,8 @@ set t_Co=256
 "color wombat
 color geo
 
-:command -nargs=* Make make <args> <cr> <cr> | cwindow 10
+:command -nargs=* Make make <args> <cr> <cr> | cwindow 15
+:command -nargs=* A Ack <args> 
 
 set mouse=a
 
@@ -38,7 +41,7 @@ function! QuickfixToggle()
 		cclose
 		let g:quickfix_is_open = 0
 	else
-		copen
+		copen 15
 		let g:quickfix_is_open = 1
 	endif
 endfunction
