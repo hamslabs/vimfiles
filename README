@@ -6,3 +6,9 @@ git submodule update
 
 to get everything
 
+Note: to git rid of the funky mouse wheel scroll down behaviour
+in the nerdtree view when using putty,
+edit vim/bundle/nerdtree/plugin/NERD_tree.vim
+comment out the line that maps <MiddleRelease> to the function
+"handleMiddleMouse"
+
