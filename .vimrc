@@ -1,4 +1,5 @@
 
+
 call pathogen#infect()
 
 set ic
@@ -15,14 +16,30 @@ syntax on
 filetype plugin indent on
 
 
+:set <S-F1>=[23~
+:set <S-F2>=[24~
+:set <S-F3>=[25~
+:set <S-F4>=[26~
+:set <S-F5>=[28~
+:set <S-F6>=[29~
+:set <S-F7>=[31~
+:set <S-F8>=[32~
+:set <S-F9>=[33~
+:set <S-F10>=[34~
+
+nnoremap <F1> :Cmapkeys<cr>
 "nnoremap <F2> :Crun<cr>
 "nnoremap <F5> :Cnext<cr>
 "nnoremap <F6> :Cstep<cr>
 "nnoremap <F7> :call PyclewnF7()<cr>
 nnoremap <F9> :call PyclewnF9()<cr>
-vnoremap <F9> :call PyclewnF9()<cr>
 vnoremap <F10> :call PyclewnF10()<cr>
 
+nnoremap <S-F3> :Ckill<cr>
+nnoremap <S-F7> :Cup<cr>
+nnoremap <S-F8> :Cdown<cr>
+nnoremap <S-F9> :call PyclewnSF9()<cr>
+vnoremap <S-F10> :call PyclewnSF10()<cr>
 
 "Nerdtree setup
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -102,5 +119,14 @@ endfunction
 fun! PyclewnF10()
 	normal gv"xy
 	execute "Cprint " . @x
+endfunction
+
+fun! PyclewnSF9()
+	execute "Cprint *" . expand("<cword>")
+endfunction
+
+fun! PyclewnSF10()
+	normal gv"xy
+	execute "Cprint *" . @x
 endfunction
 
