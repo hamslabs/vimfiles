@@ -14,6 +14,8 @@ set mouse=ncrv
 
 syntax on
 filetype plugin indent on
+au BufRead,BufNewFile *.pde set filetype=cpp
+au BufRead,BufNewFile *.ino set filetype=cpp
 
 
 :set <S-F1>=[23~
