@@ -67,6 +67,7 @@ color geo
 
 nnoremap <leader>q :call QuickfixToggle()<cr>
 nnoremap <leader>m :call DoMake()<cr><cr>
+nnoremap <leader>u :call DoMakeUpload()<cr><cr>
 nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
 nnoremap <leader>f :call ShowFuncName() <CR>
@@ -93,6 +94,12 @@ endfunction
 
 function! DoMake()
 		make
+		belowright copen
+		let g:quickfix_is_open = 1
+endfunction
+
+function! DoMakeUpload()
+		make upload
 		belowright copen
 		let g:quickfix_is_open = 1
 endfunction
