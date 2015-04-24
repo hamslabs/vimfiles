@@ -17,6 +17,8 @@ filetype plugin indent on
 au BufRead,BufNewFile *.pde set filetype=cpp
 au BufRead,BufNewFile *.ino set filetype=cpp
 
+":let g:pyclewn_args = "--pgm=/opt/gcc-arm-none-eabi-4_7-2012q4/bin/arm-none-eabi-gdb"
+":let g:pyclewn_connection = "localhost:2331"
 
 :set <S-F1>=[23~
 :set <S-F2>=[24~
@@ -30,10 +32,10 @@ au BufRead,BufNewFile *.ino set filetype=cpp
 :set <S-F10>=[34~
 
 nnoremap <F1> :Cmapkeys<cr>
-"nnoremap <F2> :Crun<cr>
-"nnoremap <F5> :Cnext<cr>
-"nnoremap <F6> :Cstep<cr>
-"nnoremap <F7> :call PyclewnF7()<cr>
+nnoremap <F2> :Crun<cr>
+nnoremap <F5> :Cnext<cr>
+nnoremap <F6> :Cstep<cr>
+nnoremap <F7> :call PyclewnF7()<cr>
 nnoremap <F9> :call PyclewnF9()<cr>
 vnoremap <F10> :call PyclewnF10()<cr>
 
@@ -69,6 +71,7 @@ color geo
 
 nnoremap <leader>q :call QuickfixToggle()<cr>
 nnoremap <leader>m :call DoMake()<cr><cr>
+nnoremap <leader>d :call DoMakeDebug()<cr><cr>
 nnoremap <leader>u :call DoMakeUpload()<cr><cr>
 nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
@@ -96,6 +99,12 @@ endfunction
 
 function! DoMake()
 		make
+		belowright copen
+		let g:quickfix_is_open = 1
+endfunction
+
+function! DoMakeDebug()
+		make DEBUG=1
 		belowright copen
 		let g:quickfix_is_open = 1
 endfunction
