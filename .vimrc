@@ -71,8 +71,10 @@ color geo
 
 nnoremap <leader>q :call QuickfixToggle()<cr>
 nnoremap <leader>m :call DoMake()<cr><cr>
+nnoremap <leader>M :call DoMakeESP32()<cr><cr>
 nnoremap <leader>d :call DoMakeDebug()<cr><cr>
 nnoremap <leader>u :call DoMakeUpload()<cr><cr>
+nnoremap <leader>U :call DoMakeUploadESP32()<cr><cr>
 nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
 nnoremap <leader>f :call ShowFuncName() <CR>
@@ -103,6 +105,12 @@ function! DoMake()
 		let g:quickfix_is_open = 1
 endfunction
 
+function! DoMakeESP32()
+		make -f ../Makefile
+		belowright copen
+		let g:quickfix_is_open = 1
+endfunction
+
 function! DoMakeDebug()
 		make DEBUG=1
 		belowright copen
@@ -111,6 +119,12 @@ endfunction
 
 function! DoMakeUpload()
 		make upload
+		belowright copen
+		let g:quickfix_is_open = 1
+endfunction
+
+function! DoMakeUploadESP32()
+		make -f ../Makefile flash
 		belowright copen
 		let g:quickfix_is_open = 1
 endfunction
