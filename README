@@ -6,6 +6,10 @@ git submodule update
 
 to get everything
 
+or
+
+git clone --recursive 
+
 Note: to git rid of the funky mouse wheel scroll down behaviour
 in the nerdtree view when using putty,
 edit vim/bundle/nerdtree/plugin/NERD_tree.vim
