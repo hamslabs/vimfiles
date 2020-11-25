@@ -79,6 +79,9 @@ nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
 nnoremap <leader>f :call ShowFuncName() <CR>
 
+"for circuitpython
+nnoremap <leader>c :w! /media/ghampton/CIRCUITPY/code.py<cr>
+
 
 let g:quickfix_is_open = 0
 
